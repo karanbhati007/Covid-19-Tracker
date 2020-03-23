@@ -2,6 +2,7 @@ package com.ksb.covid_19;
 
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -124,11 +125,13 @@ public class worldAdapter extends RecyclerView.Adapter<worldAdapter.worldHolder>
             holder.cured.setTextColor(Color.GREEN);
             holder.death.setTextColor(Color.RED);
 
-            holder.tc.setTextSize(18);
-            holder.active.setTextSize(18);
-            holder.cured.setTextSize(18);
-            holder.death.setTextSize(18);
+            holder.tc.setTextSize(15);
+            holder.active.setTextSize(15);
+            holder.cured.setTextSize(15);
+            holder.death.setTextSize(15);
         }
+
+        Log.i("TAG",Integer.toString(wlist.size()-1));
 
 
 
