@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Covid-19</string>
+    <string name="star">*</string>
 </resources>

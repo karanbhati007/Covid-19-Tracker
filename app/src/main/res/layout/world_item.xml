@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <TextView
+            android:id="@+id/countryNamee"
+            android:text="Himachal Pradesh"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingRight="5dp"
+            android:textColor="#141823"
+            android:paddingLeft="10dp"
+            android:textSize="15sp"
+            android:layout_weight="0.24"
+            />
+        <TextView
+            android:id="@+id/tc"
+            android:text="225(+43)"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:textColor="#333"
+            android:textSize="15sp"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            />
+        <TextView
+            android:id="@+id/active"
+            android:text="225(+43)"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:textColor="#333"
+            android:textSize="15sp"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            />
+        <TextView
+            android:id="@+id/curedd"
+            android:text="225(+43)"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:textColor="#333"
+            android:textSize="15sp"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            />
+        <TextView
+            android:id="@+id/deathh"
+            android:text="225(+43)"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:textSize="15sp"
+            android:textColor="#333"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            />
+
+
+    </TableRow>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/grey"/>
+</RelativeLayout>
