@@ -120,6 +120,19 @@ public class recyclerAdapter extends RecyclerView.Adapter<recyclerAdapter.recycl
 
 
 
+           if(position == list.size()-1)
+           {
+               holder.stateName.setTextSize(18);
+               holder.tcci.setTextColor(Color.BLUE);
+               holder.tccf.setTextColor(Color.BLUE);
+               holder.cured.setTextColor(Color.GREEN);
+               holder.death.setTextColor(Color.RED);
+
+               holder.tcci.setTextSize(20);
+               holder.tccf.setTextSize(20);
+               holder.cured.setTextSize(20);
+               holder.death.setTextSize(20);
+           }
 
     }
 

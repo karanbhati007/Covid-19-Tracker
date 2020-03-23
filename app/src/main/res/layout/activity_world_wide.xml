@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,96 +10,6 @@
 
 
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-       android:layout_marginTop="?attr/actionBarSize"
-        android:paddingTop="10dp"
-        android:id="@+id/wtableRow">
-        <TextView
-            android:id="@+id/wcountryNamee"
-            android:text="Name of the Country"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:textColor="#141823"
-            android:textSize="13sp"
-            android:textStyle="bold"
-            android:layout_weight="0.3"
-            android:layout_gravity="center"
-            android:gravity="center"
-            />
-        <TextView
-            android:id="@+id/wtc"
-            android:text="Total Cases"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:textSize="13sp"
-            android:textStyle="bold"
-            android:textColor="#333"
-            android:layout_weight="0.2"
-            />
-        <TextView
-            android:id="@+id/wconfirmedf"
-            android:text="Total Active cases"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:textColor="#333"
-            android:textSize="13sp"
-            android:textStyle="bold"
-            android:layout_weight="0.2"
-            />
-        <TextView
-            android:id="@+id/wcured"
-            android:text="Total Recovered"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:textColor="#333"
-            android:textSize="13sp"
-            android:textStyle="bold"
-            android:layout_weight="0.2"
-            android:gravity="center"
-            android:layout_gravity="center"
-            />
-        <TextView
-            android:id="@+id/death"
-            android:text="Total Deaths"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:textColor="#333"
-            android:textSize="13sp"
-            android:textStyle="bold"
-            android:layout_weight="0.2"
-            android:layout_gravity="center"
-            android:gravity="center"
-            />
-
-
-    </TableRow>
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/wrecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/wtableRow"
-        android:focusable="true"
-        />
-
-    <com.github.ybq.android.spinkit.SpinKitView
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/wspin_kit"
-        style="@style/SpinKitView.Large.ThreeBounce"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        app:SpinKit_Color="@color/colorPrimary"
-        android:layout_centerInParent="true"
-        android:visibility="gone"/>
 
     <androidx.drawerlayout.widget.DrawerLayout
         android:id="@+id/drawerr"
@@ -118,6 +30,105 @@
 
 
         </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="?attr/actionBarSize"
+                android:paddingTop="10dp"
+                android:id="@+id/wtableRow">
+                <TextView
+                    android:id="@+id/wcountryNamee"
+                    android:text="Name of the Country"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:textColor="#141823"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:layout_weight="0.3"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    />
+                <TextView
+                    android:id="@+id/wtc"
+                    android:text="Total Cases"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="#333"
+                    android:layout_weight="0.2"
+                    />
+                <TextView
+                    android:id="@+id/wconfirmedf"
+                    android:text="Total Active cases"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:textColor="#333"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:layout_weight="0.2"
+                    />
+                <TextView
+                    android:id="@+id/wcured"
+                    android:text="Total Recovered"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:textColor="#333"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:layout_weight="0.2"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:id="@+id/death"
+                    android:text="Total Deaths"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:textColor="#333"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:layout_weight="0.2"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    />
+
+
+            </TableRow>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/wrecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/wtableRow"
+                android:focusable="true"
+                />
+
+            <com.github.ybq.android.spinkit.SpinKitView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/wspin_kit"
+                style="@style/SpinKitView.Large.ThreeBounce"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:SpinKit_Color="@color/colorPrimary"
+                android:layout_centerInParent="true"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
 
         <com.google.android.material.navigation.NavigationView
             android:id="@+id/navi"

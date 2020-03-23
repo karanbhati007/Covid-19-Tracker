@@ -116,6 +116,20 @@ public class worldAdapter extends RecyclerView.Adapter<worldAdapter.worldHolder>
         }
 
 
+        if(position == wlist.size()-1)
+        {
+            holder.countryName.setTextSize(22);
+            holder.tc.setTextColor(Color.BLUE);
+            holder.active.setTextColor(Color.BLUE);
+            holder.cured.setTextColor(Color.GREEN);
+            holder.death.setTextColor(Color.RED);
+
+            holder.tc.setTextSize(18);
+            holder.active.setTextSize(18);
+            holder.cured.setTextSize(18);
+            holder.death.setTextSize(18);
+        }
+
 
 
     }

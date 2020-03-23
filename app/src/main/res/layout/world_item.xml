@@ -19,8 +19,8 @@
             android:paddingRight="5dp"
             android:textColor="#141823"
             android:paddingLeft="10dp"
-            android:textSize="15sp"
-            android:layout_weight="0.24"
+            android:textSize="16sp"
+            android:layout_weight="0.28"
             />
         <TextView
             android:id="@+id/tc"
@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:padding="5dp"
             android:textColor="#333"
-            android:textSize="15sp"
+            android:textSize="18sp"
             android:layout_weight="0.2"
             android:gravity="center"
             />
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:padding="5dp"
             android:textColor="#333"
-            android:textSize="15sp"
+            android:textSize="18sp"
             android:layout_weight="0.2"
             android:gravity="center"
             />
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:padding="5dp"
             android:textColor="#333"
-            android:textSize="15sp"
+            android:textSize="18sp"
             android:layout_weight="0.2"
             android:gravity="center"
             />
@@ -61,7 +61,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:padding="5dp"
-            android:textSize="15sp"
+            android:textSize="18sp"
             android:textColor="#333"
             android:layout_weight="0.2"
             android:gravity="center"
