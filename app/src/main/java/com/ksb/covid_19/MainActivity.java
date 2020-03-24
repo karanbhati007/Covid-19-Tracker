@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             Document document = Jsoup.parse(dataa);
 
-            Elements elements = document.select("tbody").eq(1).select("tr"); // 1->size-1
+            Elements elements = document.select("tbody").eq(7).select("tr"); // 1->size-1
             int size = elements.size();
 
             for (int i = 0; i < size; i++) {
@@ -117,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
             initrecycler();
 
         } catch (Exception e) {
+            Toast.makeText(this, "Health Ministry Website May be Changed !!\nPlz Contact the Developer.", Toast.LENGTH_SHORT).show();
             e.printStackTrace();
         }
     }
