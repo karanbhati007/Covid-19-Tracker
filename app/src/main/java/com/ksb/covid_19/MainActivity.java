@@ -17,7 +17,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -25,16 +24,14 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.github.ybq.android.spinkit.SpinKitView;
 import com.google.android.material.navigation.NavigationView;
+import com.ksb.covid_19.adapter.recyclerAdapter;
 import com.ksb.covid_19.model.Info;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -42,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<Info> listInfo = new ArrayList<>();
     SpinKitView progressBar;
     SharedPreferences sharedPreferences;
+    int f=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,13 +54,15 @@ public class MainActivity extends AppCompatActivity {
         getData();
 
         // String url = "https://www.mohfw.gov.in/";
-
-
         sharedPreferences = this.getSharedPreferences("com.ksb.covid_19", MODE_PRIVATE);
-        // sharedPreferences.edit().putString("po","uouo").apply();
+
+        if(sharedPreferences.getString("isFirst",null)==null)
+        {
+            Toast.makeText(this, "Data Loaded !!\nPlz Restart The App", Toast.LENGTH_SHORT).show();
+            finish();
+        }
+
         sharedPreferences.edit().putString("isFirst", "yo").apply();
-
-
     }
 
 
@@ -70,48 +70,53 @@ public class MainActivity extends AppCompatActivity {
         try {
             Document document = Jsoup.parse(dataa);
 
-            Elements elements = document.select("tbody").eq(7).select("tr"); // 1->size-1
+            Elements elements1 = document.select("tbody");   /*eq(9).select("tr");*/ // 1->size-1
+            int tBodysize = elements1.size();
+            Log.i("TAG111",Integer.toString(tBodysize));
+            Elements elements = elements1.eq(tBodysize-1).select("tr");
             int size = elements.size();
+           Log.i("TAG",Integer.toString(size));
 
-            for (int i = 0; i < size; i++) {
+            for (int i = 0; i <= size-1; i++) {
                 Elements stateInfo = elements.get(i).select("td");
+                Log.i("Data",stateInfo.text());
 
-                String name;
-                int tcci;
-                int tccf;
-                int cured;
-                int death;
-                if (i == size - 1) {
-                    name = stateInfo.get(0).text();
-                    System.out.println(stateInfo.get(1).text());
-                    tcci = Integer.parseInt(stateInfo.get(1).text().replaceAll("\\D+", ""));
-                    tccf = Integer.parseInt(stateInfo.get(2).text().replaceAll("\\D+", ""));
-                    cured = Integer.parseInt(stateInfo.get(3).text().replaceAll("\\D+", ""));
-                    death = Integer.parseInt(stateInfo.get(4).text().replaceAll("\\D+", ""));
+                try {
+                    String name;
+                    int tcci;
+                    int tccf;
+                    int cured;
+                    int death;
+                    if (i == size-1) {
+                        name = stateInfo.get(0).text();
+                     //   System.out.println(stateInfo.get(1).text());
+                        tcci = Integer.parseInt(stateInfo.get(1).text().replaceAll("\\D+", ""));
+                      //  tccf = Integer.parseInt(stateInfo.get(2).text().replaceAll("\\D+", ""));
+                        cured = Integer.parseInt(stateInfo.get(2).text().replaceAll("\\D+", ""));
+                        death = Integer.parseInt(stateInfo.get(3).text().replaceAll("\\D+", ""));
+                      //  System.out.println(tcci);
 
-                    /*name = stateInfo.get(0).text();
-                    String tccii="",tccff="",curedd="",deathh="";
-                      tccii = stateInfo.get(1).text();
-                      tccff =stateInfo.get(2).text();
-                      curedd = stateInfo.get(3).text();
-                      deathh = stateInfo.get(4).text();
 
-                    tcci = Integer.parseInt(tccii.substring(0,tccii.length()));
-                     tccf = Integer.parseInt(tccff.substring(0,tccff.length()));
-                     cured = Integer.parseInt(curedd.substring(0,curedd.length()));
-                       death = Integer.parseInt(deathh);
-*/
+                    } else {
+                        name = stateInfo.get(1).text();
+                        tcci = Integer.parseInt(stateInfo.get(2).text().replaceAll("\\D+", ""));
+                      //  tccf = Integer.parseInt(stateInfo.get(3).text().replaceAll("\\D+", ""));
+                        cured = Integer.parseInt(stateInfo.get(3).text().replaceAll("\\D+", ""));
+                       death = Integer.parseInt(stateInfo.get(4).text().replaceAll("\\D+", ""));
 
-                } else {
-                    name = stateInfo.get(1).text();
-                    tcci = Integer.parseInt(stateInfo.get(2).text().replaceAll("\\D+", ""));
-                    tccf = Integer.parseInt(stateInfo.get(3).text().replaceAll("\\D+", ""));
-                    cured = Integer.parseInt(stateInfo.get(4).text().replaceAll("\\D+", ""));
-                    death = Integer.parseInt(stateInfo.get(5).text().replaceAll("\\D+", ""));
+                    }
+
+                    listInfo.add(new Info(name, tcci, cured, death));
+                }catch (Exception e)
+                {
+                    //Log.i("TAG2",Integer.toString(i));
+
+                    if(f==0)
+                    Toast.makeText(this, "Health Ministry Website May be Changed !!\nPlz Contact the Developer.", Toast.LENGTH_SHORT).show();
+                    f=1;
+                    e.printStackTrace();
 
                 }
-
-                listInfo.add(new Info(name, tcci, tccf, cured, death));
             }
 
             initrecycler();
@@ -119,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
         } catch (Exception e) {
             Toast.makeText(this, "Health Ministry Website May be Changed !!\nPlz Contact the Developer.", Toast.LENGTH_SHORT).show();
             e.printStackTrace();
+
         }
     }
 
@@ -127,7 +133,6 @@ public class MainActivity extends AppCompatActivity {
 
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(new recyclerAdapter(listInfo, sharedPreferences));
 
         progressBar.setVisibility(View.GONE);

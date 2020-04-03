@@ -1,4 +1,4 @@
-package com.ksb.covid_19;
+package com.ksb.covid_19.adapter;
 
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.ksb.covid_19.model.Info;
+import com.ksb.covid_19.R;
 import com.ksb.covid_19.model.WorldInfo;
 
 import java.lang.reflect.Type;
@@ -131,7 +131,7 @@ public class worldAdapter extends RecyclerView.Adapter<worldAdapter.worldHolder>
             holder.death.setTextSize(15);
         }
 
-        Log.i("TAG",Integer.toString(wlist.size()-1));
+      //  Log.i("TAG",Integer.toString(wlist.size()-1));
 
 
 

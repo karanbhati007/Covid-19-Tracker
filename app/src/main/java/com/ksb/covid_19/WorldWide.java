@@ -23,6 +23,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.github.ybq.android.spinkit.SpinKitView;
 import com.google.android.material.navigation.NavigationView;
+import com.ksb.covid_19.adapter.worldAdapter;
 import com.ksb.covid_19.model.WorldInfo;
 
 import org.jsoup.Jsoup;
@@ -134,7 +135,7 @@ public class WorldWide extends AppCompatActivity {
                 cured = cured.isEmpty() ? "0" : cured;
                 death = death.isEmpty() ? "0" : death;
 
-                //  cured = Integer.toString(Integer.parseInt(cured)+1);
+                 // tc = Integer.toString(Integer.parseInt(tc)+10000);
 
 
                 wolrdList.add(new WorldInfo(contryName, tc, active, cured, death));

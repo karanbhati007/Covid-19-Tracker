@@ -3,14 +3,14 @@ package com.ksb.covid_19.model;
 public class Info {
     String stateName;
     int tcci;  // Total Confirmed cases (Indian National)
-    int tccf;  // Total Confirmed cases ( Foreign National )
+   // int tccf;  // Total Confirmed cases ( Foreign National )
     int cured; // Cured
     int death; // Death
 
-    public Info(String stateName, int tcci, int tccf, int cured, int death) {
+    public Info(String stateName, int tcci, int cured, int death) {
         this.stateName = stateName;
         this.tcci = tcci;
-        this.tccf = tccf;
+      //  this.tccf = tccf;
         this.cured = cured;
         this.death = death;
     }
@@ -31,13 +31,6 @@ public class Info {
         this.tcci = tcci;
     }
 
-    public int getTccf() {
-        return tccf;
-    }
-
-    public void setTccf(int tccf) {
-        this.tccf = tccf;
-    }
 
     public int getCured() {
         return cured;

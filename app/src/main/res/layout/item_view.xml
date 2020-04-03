@@ -14,11 +14,11 @@
             android:text="Himachal Pradesh"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:padding="5dp"
+            android:padding="10dp"
             android:textColor="#141823"
             android:textSize="14sp"
             android:textStyle="bold"
-            android:layout_weight="0.35"
+            android:layout_weight="1.3"
             />
         <TextView
             android:id="@+id/confirmedin"
@@ -28,10 +28,10 @@
             android:padding="5dp"
             android:textColor="#333"
             android:textSize="15sp"
-            android:layout_weight="0.2"
+            android:layout_weight="1"
             android:gravity="center"
             />
-        <TextView
+      <!--  <TextView
             android:id="@+id/confirmedf"
             android:text="225(+43)"
             android:layout_width="0dp"
@@ -39,9 +39,9 @@
             android:padding="5dp"
             android:textColor="#333"
             android:textSize="15sp"
-            android:layout_weight="0.2"
+            android:layout_weight="1"
             android:gravity="center"
-            />
+            />-->
         <TextView
             android:id="@+id/cured"
             android:text="225(+43)"
@@ -50,7 +50,7 @@
             android:padding="5dp"
             android:textColor="#333"
             android:textSize="15sp"
-            android:layout_weight="0.2"
+            android:layout_weight="1"
             android:gravity="center"
             />
         <TextView
@@ -61,7 +61,7 @@
             android:padding="5dp"
             android:textSize="15sp"
             android:textColor="#333"
-            android:layout_weight="0.2"
+            android:layout_weight="1"
             android:gravity="center"
             />
 
